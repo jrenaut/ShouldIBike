@@ -1,0 +1,8 @@
+$def with (question, answers)
+<p>
+    <span id="q$question.id">$question.text</span>
+    <ul>
+    $for a in answers:
+    	<li><a href="/$a.c_question_id">$a.text</a></li>
+    </ul>
+</p>

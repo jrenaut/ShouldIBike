@@ -1,8 +1,22 @@
 $def with (question, answers)
+<html>
+<head>
+<title>Should I bike today?</title>
+<link rel="stylesheet" href="static/style.css" type="text/css" media="screen">
+</head>
+<div id="content">
 <p>
-    <span id="q$question.id">$question.text</span>
-    <ul>
-    $for a in answers:
-    	<li><a href="/$a.c_question_id">$a.text</a></li>
-    </ul>
+	$if answers:
+    	<span id="q$question.id">$question.text</span>
+    	<ul>
+    	$for a in answers:
+    		<li><a href="/$a.c_question_id">$a.text</a></li>
+    	</ul>
+    $else:
+    	<h3>$:question.text</h3>
 </p>
+</div>
+<div class="spacer"></div>
+<div class="footer"><a href="/">Start over</a></div>
+</body>
+</html>

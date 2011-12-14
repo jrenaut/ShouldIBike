@@ -10,7 +10,7 @@ $def with (question, answers)
     	<span id="q$question.id">$question.text</span>
     	<ul>
     	$for a in answers:
-    		<li><a href="/$a.c_question_id">$a.text</a></li>
+    		<li><a href="/$a.child_id">$a.text</a></li>
     	</ul>
     $else:
     	<h3>$:question.text</h3>

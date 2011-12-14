@@ -18,5 +18,8 @@ class index:
         answers = db.select('node', limvar, where="parent_id=$q_id")
         return render.index(question, answers)
         
-if __name__ == "__main__": app.run()
+if __name__ == "__main__":
+    app.run() #this is normally only called from dispatch.cgi
+else:
+    web.wsgi.runwsgi = lambda func, addr=None: web.wsgi.runfcgi(func, addr)
         
